@@ -1,0 +1,48 @@
+@startuml Snowbros
+
+class Juego 
+class Jugador
+class Snowbro
+
+class Nivel
+class Mapa 
+class Escalon
+class Enemigo
+class Boss
+
+Nivel "1" *-- "1" Mapa
+Mapa "1" *-- Escalon
+Juego "1" *-- "1" Jugador
+Jugador "1" o-- "1" Snowbro
+Nivel "1" *-- Enemigo
+Nivel "5" *-- Boss
+
+class Habilidad
+class Velocidad 
+class Saltar
+class Lanzar 
+
+Velocidad --|> Habilidad
+Saltar --|> Habilidad
+Lanzar --|> Habilidad
+
+class PowerUp
+class item 
+class SpeedUp
+class DistanceUp
+class LiveUp
+
+PowerUp --|> item
+SpeedUp --|> PowerUp
+DistanceUp --|> PowerUp
+LiveUp --|> PowerUp
+
+class ObjetoDes
+class ObjetoInDes
+
+Enemigo --|> ObjetoDes
+Escalon --|> ObjetoInDes
+Boss --|> ObjetoDes
+
+
+@enduml
